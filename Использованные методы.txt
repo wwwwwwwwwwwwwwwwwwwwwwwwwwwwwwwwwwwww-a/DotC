@@ -1,0 +1,42 @@
+Исполняемые методы и классы Arcade
+1. Основные классы и управление окном
+arcade.Window — основной класс окна игры (наследуется в main.py).
+arcade.View — класс для управления экранами/состояниями (Меню, Игра, Настройки).
+arcade.run() — запускает главный игровой цикл.
+arcade.close_window() — закрывает окно приложения.
+arcade.set_background_color(color) — устанавливает цвет фона при очистке экрана.
+window.clear() — очищает экран перед рисованием нового кадра.
+window.set_minimum_size() — ограничивает минимальный размер окна.
+window.center_window() — размещает окно по центру монитора.
+window.show_view(view) — переключает текущий экран.
+2. Работа со спрайтами и физикой
+arcade.Sprite — базовый класс для всех игровых объектов (Игрок, Враги, Пули).
+arcade.SpriteSolidColor(width, height, color) — создает спрайт в виде цветного прямоугольника (используется для стен, пуль без текстур).
+arcade.SpriteList() — контейнер для оптимизированной отрисовки групп спрайтов.
+arcade.check_for_collision(sprite1, sprite2) — проверяет столкновение двух спрайтов.
+arcade.check_for_collision_with_list(sprite, sprite_list) — проверяет столкновение спрайта со списком спрайтов.
+sprite.remove_from_sprite_lists() — удаляет спрайт из всех списков (смерть врага, удаление пули).
+3. Загрузка ресурсов
+arcade.load_texture(filename) — загружает изображение.
+arcade.load_sound(filename) — загружает звуковой файл.
+texture.flip_left_right() — зеркально отражает текстуру (для анимации поворота).
+4. Геометрия и Координаты (Arcade 3.0+)
+arcade.XYWH(x, y, width, height) — описывает прямоугольник через центр (X, Y) и размеры.
+arcade.LRBT(left, right, bottom, top) — описывает прямоугольник через координаты его краев.
+arcade.LBWH(left, bottom, width, height) — описывает прямоугольник через левый нижний угол и размеры.
+5. Отрисовка (Drawing)
+arcade.draw_texture_rect(texture, rect) — рисует текстуру в заданной области.
+arcade.draw_rect_filled(rect, color) — рисует закрашенный прямоугольник.
+arcade.draw_rect_outline(rect, color, border_width) — рисует рамку прямоугольника.
+arcade.draw_circle_filled(x, y, radius, color) — рисует закрашенный круг.
+arcade.draw_circle_outline(x, y, radius, color, border_width) — рисует контур круга.
+arcade.draw_text(...) — (старый метод) рисует текст. В основном проекте используется класс Text, но в draw_skill_slot встречается этот метод.
+6. Текст
+arcade.Text(text, x, y, color, ...) — создает объект текста для эффективной отрисовки.
+7. Звук
+sound.play() — воспроизводит загруженный звук.
+8. Константы
+arcade.color.* — набор цветов (RED, BLUE, GOLD и т.д.).
+arcade.key.* — коды клавиш клавиатуры (W, A, S, D, ESCAPE и т.д.).
+arcade.MOUSE_BUTTON_LEFT — константа левой кнопки мыши.
+
